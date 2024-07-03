@@ -17,6 +17,13 @@ class ProductController extends Controller
             "products"=>$products
         ]);
     }
+
+    public function show(string $id){
+        $product = Product::find($id);
+        return Inertia::render("product/Show", [
+            "product"=>$product
+        ]);
+    }
     public function create(){
         return Inertia::render("product/Create");
     }
@@ -44,6 +51,7 @@ class ProductController extends Controller
         $product->price = $request->price;
 
         $product->seller_id = Auth::id() ;
+        // dd($product);
         $product->save();
 
         return redirect(route("product.index"));

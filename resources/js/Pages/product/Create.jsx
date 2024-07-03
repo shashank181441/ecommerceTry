@@ -1,14 +1,10 @@
 import { useState } from "react";
-import { createInertiaApp, useForm } from "@inertiajs/react"; 
+import {  useForm } from "@inertiajs/react"; 
 
 
 
 
 export default function CreateProduct() {
-//   const [name, setName] = useState("");
-//   const [description, setDescription] = useState("");
-//   const [price, setPrice] = useState("");
-//   const [mainImage, setMainImage] = useState(null);
 
 const {data, setData, post, errors, reset} = useForm({
     name:"", description:"", price:"", mainImage:""

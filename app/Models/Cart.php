@@ -15,12 +15,12 @@ class Cart extends Model
 
     public function buyer()
     {
-        return $this->hasOne(User::class, 'buyer_id', 'id');
+        return $this->belongsTo(User::class, 'buyer_id');
     }
 
     public function product()
     {
-        return $this->hasOne(Product::class, 'product_id', 'id');
+        return $this->belongsTo(Product::class, 'product_id');
     }
 
 
